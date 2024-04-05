@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0) !important;
+}
+
+.login-container,
+.register-container {
+    width: 100%;
+    min-height: 100vh; /* Asegura que el contenedor tenga al menos la altura de la ventana del navegador */
+    z-index: 10;
+
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    text-align: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input,
+form button {
+    margin: 10px 0;
+}

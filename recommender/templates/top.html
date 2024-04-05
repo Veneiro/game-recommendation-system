@@ -1,0 +1,38 @@
+{% load static %}
+<div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+    <script src="{% static 'recommender/cursor.js' %}"></script>
+
+    {% if user.is_authenticated %}
+        <div class="login-head">
+            <p>Hello, {{ user.username }}!</p>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button class="login-button" type="submit">Logout</button>
+            </form>
+        </div>
+    {% else %}
+        <div class="login-head">
+            <form method="get" action="{% url 'login' %}">
+                <button class="login-button" type="submit">Login</button>
+            </form>
+        </div>
+    {% endif %}
+    <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
+    <label for="menu-icon"></label>
+    <nav class="nav">
+        <ul class="pt-5">
+            <li><a href="https://inboxpraveen.github.io/" target="_blank">About</a></li>
+            <li><a href="https://inboxpraveen.github.io/projects/all-projects.html" target="_blank">All Projects</a></li>
+            <li><a href="https://inboxpraveen.github.io/" target="_blank">Blogs</a></li>
+            <li><a href="https://inboxpraveen.github.io/" target="_blank">Contact</a></li>
+        </ul>
+    </nav>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="{% static 'production ID_4779866.mp4' %}" type="video/mp4">
+    </video>
+    <script>
+        var vid = document.getElementById("myVideo");
+        vid.playbackRate = 0.25;
+    </script>
